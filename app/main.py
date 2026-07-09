@@ -10,6 +10,12 @@ def main():
             break
         elif command.startswith("echo "):
             print(command[5:])
+        elif command.startswith("type "):
+            if(command[5:8] == "exit" or "echo" or "type"):
+                print(f"{command[5:8]} is a shell buildin")
+            else:
+                print(f"{command}: command not found")
+
         else:
             print(f"{command}: command not found")
 
